@@ -15,3 +15,6 @@ npm-debug.log*
 # Respaldos locales del sistema
 respaldos/
 *.local.json
+
+# Reporte de diagnóstico del puente (se genera en cada computadora)
+diagnostico-gorilas.txt

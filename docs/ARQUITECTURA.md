@@ -1,4 +1,4 @@
-# ALLIANCE GYM — Sistema de Gestión Integral
+# GORILAS GYM — Sistema de Gestión Integral
 ## Contrato de arquitectura (LEER COMPLETO ANTES DE ESCRIBIR CÓDIGO)
 
 Este documento es la fuente de verdad. Todo archivo del proyecto DEBE respetarlo al pie de la letra.
@@ -66,8 +66,8 @@ El orden de `<script>` en `index.html` es exactamente ese. Un archivo solo puede
 {
   meta:    { version: 1, creado: ISOString, actualizado: ISOString, folioPago: 1 },
   settings: {
-    nombreGym: 'ALLIANCE GYM',
-    lema: 'Más fuertes juntos',
+    nombreGym: 'GORILAS GYM',
+    lema: 'Fitness Club',
     moneda: 'MXN', simbolo: '$', locale: 'es-MX',
     direccion, telefono, email, horario,
     tema: 'oscuro',            // 'oscuro' | 'claro'
@@ -273,7 +273,7 @@ copiar(texto)                 -> Promise
 AG.Icons.get(nombre, tamano)  -> string '<svg ...>...</svg>'  (tamano por defecto 20)
 AG.Icons.lista                -> [nombres]
 ```
-Nombres requeridos: `inicio, socios, coach, pesa, mancuerna, corazon, dinero, tarjeta, grafica, reporte, regla, balanza, manzana, calculadora, calendario, reloj, estrella, chat, campana, config, salir, buscar, mas, editar, basura, ojo, check, x, alerta, flecha-arriba, flecha-abajo, flecha-der, flecha-izq, descargar, subir, imprimir, usuario, candado, correo, telefono, ubicacion, trofeo, fuego, gota, luna, sol, menu, filtro, agua, sueno, foto, qr, whatsapp, info, historial, meta, cinta, rayo, escudo, clase, nutricion`.
+Nombres requeridos: `inicio, socios, coach, pesa, mancuerna, corazon, dinero, tarjeta, grafica, reporte, regla, balanza, manzana, calculadora, calendario, reloj, estrella, chat, campana, config, salir, buscar, mas, editar, basura, ojo, check, x, alerta, flecha-arriba, flecha-abajo, flecha-der, flecha-izq, descargar, subir, imprimir, usuario, candado, correo, telefono, ubicacion, trofeo, fuego, gota, luna, sol, menu, filtro, agua, sueno, foto, qr, whatsapp, info, historial, meta, cinta, rayo, escudo, gorila, clase, nutricion`.
 Si piden un icono inexistente, devolver un círculo neutro (nunca romper).
 
 ### `AG.Calc` — motor de cálculo
@@ -512,8 +512,8 @@ AG.Mod.Avisos.paraUsuario(usuario)            // array de avisos vigentes
 
 | Rol | Email | Password |
 |-----|-------|----------|
-| Director | `director@alliancegym.mx` | `admin123` |
-| Coach | `coach@alliancegym.mx` | `coach123` |
-| Socio | `socio@alliancegym.mx` | `socio123` |
+| Director | `director@gorilasgym.mx` | `admin123` |
+| Coach | `coach@gorilasgym.mx` | `coach123` |
+| Socio | `socio@gorilasgym.mx` | `socio123` |
 
 Además: 5 coaches y ~45 socios con historial realista de 8 meses (pagos, mediciones inicial/final por mes, bitácoras, calificaciones, asistencias, clases).

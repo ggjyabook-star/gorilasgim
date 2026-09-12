@@ -1,4 +1,4 @@
-# 🛡️ ALLIANCE GYM — Sistema de Gestión Integral
+# 🦍 GORILAS GYM — Sistema de Gestión Integral
 
 Ecosistema completo para administrar el gimnasio: **socios, coaches y dirección** en un solo panel.
 Sin instalaciones, sin internet, sin mensualidades de software. Todo corre en tu computadora.
@@ -27,9 +27,9 @@ Luego entra a `http://localhost:5173`.
 
 | Perfil | Correo | Contraseña |
 |---|---|---|
-| **Dirección** | `director@alliancegym.mx` | `admin123` |
-| **Coach** | `coach@alliancegym.mx` | `coach123` |
-| **Socio** | `socio@alliancegym.mx` | `socio123` |
+| **Dirección** | `director@gorilasgym.mx` | `admin123` |
+| **Coach** | `coach@gorilasgym.mx` | `coach123` |
+| **Socio** | `socio@gorilasgym.mx` | `socio123` |
 
 En la pantalla de entrada hay tres botones que entran directo con cada perfil.
 
@@ -79,6 +79,8 @@ Ve **todo** lo anterior más:
 - **Eventos** — retos, clínicas de técnica, competencias internas y convivencias, con inscripción.
 - **Reportes** — finanzas, retención, churn, utilidad, progreso del gimnasio y satisfacción.
 - **Asistencia** — control de acceso en recepción, horas pico y socios en riesgo.
+- **Control de acceso** — las entradas que registra el **lector de rostro** del gimnasio, conectadas
+  con cada socio. Ver abajo.
 - **Avisos y configuración** — planes, precios, **productos que vende el gimnasio**, usuarios y respaldos.
 
 ---
@@ -105,6 +107,25 @@ En el **navegador de esta computadora** (almacenamiento local). No se envía nad
 - Haz respaldo una vez por semana.
 
 > Si borras los datos de navegación del navegador, se borra la información del sistema. Respalda.
+
+---
+
+## 🚪 Lector de rostro (opcional)
+
+El gimnasio tiene un lector Dahua administrado con **Smart PSS Lite**. El sistema puede recibir sus
+entradas y convertirlas en asistencias solas, **sin tocar Smart PSS Lite**: los dos conviven.
+
+Para prenderlo, en lugar de `ABRIR-SISTEMA.bat` usa:
+
+**`ABRIR-CON-LECTOR.bat`**
+
+Levanta el sitio igual que siempre y además queda escuchando al lector. Luego, en
+**Dirección → Operación → Control de acceso** se ve si está llegando todo y se vincula cada persona
+del lector con su socio (una sola vez por socio).
+
+Sin el lector, o sin prender el puente, el sistema funciona exactamente como antes.
+
+Instrucciones completas y qué datos hacen falta: [docs/CONEXION-LECTOR.md](docs/CONEXION-LECTOR.md).
 
 ---
 

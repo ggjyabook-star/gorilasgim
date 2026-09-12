@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — Enrutador por hash (AG.Router)
+   GORILAS GYM — Enrutador por hash (AG.Router)
    Registra rutas, resuelve '#/rol/seccion?a=1', pinta dentro de #vista,
    construye el menú lateral y protege por rol.
    ============================================================= */
@@ -138,7 +138,7 @@ window.AG = window.AG || {};
     if (AG.DB && AG.DB.state && AG.DB.state.settings && AG.DB.state.settings.nombreGym) {
       return AG.DB.state.settings.nombreGym;
     }
-    return 'Alliance Gym';
+    return 'Gorilas Gym';
   }
 
   function emitir(evento, datos) {

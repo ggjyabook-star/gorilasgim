@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — Ilustraciones de ejercicios (AG.Ilustra)
+   GORILAS GYM — Ilustraciones de ejercicios (AG.Ilustra)
    -------------------------------------------------------------
    Pictogramas SVG dibujados a mano, sin librerías ni red. Cada
    patrón de movimiento tiene DOS fases (inicio y fin) y, con

@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Mod.Asistencia
+   GORILAS GYM — AG.Mod.Asistencia
    Control de acceso (recepción), bitácora del día y análisis mensual
    de asistencias.
 
@@ -97,7 +97,7 @@ window.AG = window.AG || {};
       var s = AG.DB.state.settings;
       if (s && s.nombreGym) return String(s.nombreGym);
     } catch (e) { /* se usa el respaldo */ }
-    return 'Alliance Gym';
+    return 'Gorilas Gym';
   }
 
   function esArreglo(v) {

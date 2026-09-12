@@ -1,8 +1,8 @@
 @charset "UTF-8";
 /* =============================================================================
-   ALLIANCE GYM — Hoja de estilos única del sistema
+   GORILAS GYM — Hoja de estilos única del sistema
    -----------------------------------------------------------------------------
-   Identidad: escudo negro/carbón con rojo intenso y tipografía condensada.
+   Identidad: gorila negro/carbón con rojo intenso y tipografía condensada.
    Sin fuentes remotas, sin @import, sin URLs externas: todo autocontenido
    para que la app funcione abriendo index.html con doble clic (file://).
 
@@ -285,6 +285,21 @@ small { font-size: 12px; }
 
 code, kbd, pre, samp { font-family: var(--fuente-mono); font-size: .92em; }
 
+/* Bloque de código o de texto crudo: comandos para copiar y lo que
+   manda el lector de acceso en la pantalla de diagnóstico. */
+.code-block {
+  background: var(--carbon-2);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-sm);
+  color: var(--texto-2);
+  padding: 10px 12px;
+  margin: 6px 0 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 220px;
+}
+
 kbd {
   background: var(--panel-2);
   border: 1px solid var(--borde);
@@ -412,6 +427,13 @@ kbd {
   background: linear-gradient(115deg, transparent 42%, rgba(255, 255, 255, .28) 50%, transparent 58%);
   transform: translateX(-120%);
   animation: brillo 2.2s ease-in-out infinite;
+}
+
+/* El gorila del arranque va por encima del destello. */
+.boot-logo svg {
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .35));
 }
 
 @keyframes pulso {

@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Views.SocioInicio (rediseño v2)
+   GORILAS GYM — AG.Views.SocioInicio (rediseño v2)
    -------------------------------------------------------------
    El panel del socio, pensado para gente que no quiere leer:
 
@@ -182,7 +182,7 @@ window.AG = window.AG || {};
     return (s && typeof s === 'object') ? s : {};
   }
 
-  function nombreGym() { return ajustes().nombreGym || 'Alliance Gym'; }
+  function nombreGym() { return ajustes().nombreGym || 'Gorilas Gym'; }
 
   /* ¿Existe AG.Mod.X.fn? (los módulos nuevos pueden no estar cargados). */
   function hayFn(modulo, fn) {

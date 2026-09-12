@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Mod.Calificaciones
+   GORILAS GYM — AG.Mod.Calificaciones
    Reseñas del gimnasio y de los coaches.
 
    - Vista de dirección: Resumen · Reseñas · Coaches.

@@ -2,7 +2,7 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "alliance-gym",
+      "name": "gorilas-gym",
       "runtimeExecutable": "node",
       "runtimeArgs": ["server.js"],
       "port": 5173

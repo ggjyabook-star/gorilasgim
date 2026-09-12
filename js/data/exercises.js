@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — Catálogo de ejercicios
+   GORILAS GYM — Catálogo de ejercicios
    Biblioteca profesional en español (es-MX).
    Expone: AG.Data.exercises, AG.Data.GRUPOS, AG.Data.EQUIPOS,
            AG.Data.ejercicio(id), AG.Data.ejerciciosPor(filtro),

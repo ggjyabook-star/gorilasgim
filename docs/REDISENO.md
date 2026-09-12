@@ -1,4 +1,4 @@
-# ALLIANCE GYM — Rediseño v2
+# GORILAS GYM — Rediseño v2
 ## Menos texto, más ilustración, y sesiones con entrenador en vez de clases
 
 Complemento de `ARQUITECTURA.md`. **Todo lo del contrato original sigue vigente**; esto lo extiende y

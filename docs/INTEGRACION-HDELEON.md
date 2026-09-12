@@ -1,9 +1,9 @@
 # Integración con GYM HDeLeon 3.0
 
 **Objetivo:** que cuando se dé de alta un socio en HDeLeon (la PC del gimnasio),
-aparezca solo en Alliance Gym (`aliancegim.vercel.app`). Sin capturar dos veces.
+aparezca solo en Gorilas Gym (`aliancegim.vercel.app`). Sin capturar dos veces.
 
-La sincronización es **de una sola vía**: HDeLeon manda, Alliance Gym recibe.
+La sincronización es **de una sola vía**: HDeLeon manda, Gorilas Gym recibe.
 
 ---
 
@@ -17,7 +17,7 @@ romperlo o dejarlos sin garantía. Todas las consultas son `SELECT`.
 
 ## Qué es cada sistema
 
-| | GYM HDeLeon 3.0 | Alliance Gym |
+| | GYM HDeLeon 3.0 | Gorilas Gym |
 |---|---|---|
 | Qué es | App de escritorio Windows | Sitio web estático |
 | Tecnología | C# .NET + MySQL | HTML/JS sin backend |
@@ -26,7 +26,7 @@ romperlo o dejarlos sin garantía. Todas las consultas son `SELECT`.
 | Su fuerte | Cobros, acceso físico, reconocimiento facial, RFID | Rutina, nutrición, progreso, sesiones con entrenador |
 
 **Reparto de responsabilidades:** HDeLeon es el sistema de registro (socios,
-membresías, pagos, acceso). Alliance Gym es la app del socio (entrenamiento).
+membresías, pagos, acceso). Gorilas Gym es la app del socio (entrenamiento).
 
 ---
 
@@ -35,7 +35,7 @@ membresías, pagos, acceso). Alliance Gym es la app del socio (entrenamiento).
 ```
 PC del gimnasio                    Vercel                 Navegador del socio
 ┌──────────────────┐        ┌────────────────┐        ┌──────────────────┐
-│ HDeLeon (MySQL)  │──lee──▶│ función que    │◀─fetch─│  Alliance Gym    │
+│ HDeLeon (MySQL)  │──lee──▶│ función que    │◀─fetch─│  Gorilas Gym    │
 │ + agente cada    │  POST  │ recibe y guarda│  con   │  mezcla socios   │
 │   15 min         │  token │  los socios    │ sesión │  en su base      │
 └──────────────────┘        └────────────────┘        └──────────────────┘
@@ -45,11 +45,11 @@ PC del gimnasio                    Vercel                 Navegador del socio
    y manda los socios como JSON.
 2. **Función serverless en Vercel**: recibe con un token y guarda. Vercel ya
    hospeda el sitio, así que no hay que contratar nada nuevo.
-3. **Receptor en Alliance Gym**: al iniciar sesión trae los socios y los mezcla.
+3. **Receptor en Gorilas Gym**: al iniciar sesión trae los socios y los mezcla.
 
 ### Por qué la pieza 2 no es opcional
 
-Hoy Alliance Gym guarda todo en el `localStorage` de cada navegador, así que
+Hoy Gorilas Gym guarda todo en el `localStorage` de cada navegador, así que
 cada dispositivo tiene su propia copia. Si el agente escribiera directo en un
 navegador, los socios solo se verían en esa computadora. La pieza intermedia es
 lo que hace que aparezcan para todos.
@@ -100,7 +100,7 @@ No hay que pedírsela al proveedor. En orden:
 HDeLeon exporta reportes a Excel/CSV. En vez del agente automático:
 
 - Recepción exporta la lista de socios (diario o semanal).
-- Alliance Gym tiene una pantalla **"Importar socios"** (solo director) que lee
+- Gorilas Gym tiene una pantalla **"Importar socios"** (solo director) que lee
   ese CSV y aplica la misma lógica de mezcla que el sync automático.
 
 No es en tiempo real (alguien sube el archivo), pero no necesita contraseña de
@@ -120,7 +120,7 @@ dónde llegan los datos (CSV subido a mano en vez de POST del agente).
 
 ## Paso 2 — El contrato de datos
 
-Lo que Alliance Gym necesita de cada socio. Esta es la forma normalizada que
+Lo que Gorilas Gym necesita de cada socio. Esta es la forma normalizada que
 el agente debe mandar, sin importar cómo se llamen las columnas en HDeLeon:
 
 ```json
@@ -143,19 +143,19 @@ el agente debe mandar, sin importar cómo se llamen las columnas en HDeLeon:
 `estado` se normaliza a uno de estos cuatro: `activo`, `vencido`, `congelado`,
 `baja`. Es lo que ya entiende `AG.Calc.estadoMembresia()`.
 
-### Campos que HDeLeon manda y Alliance Gym actualiza
+### Campos que HDeLeon manda y Gorilas Gym actualiza
 
 `nombre`, `apellidos`, `email`, `telefono`, `codigo`, `fechaNacimiento`,
 `sexo`, `fechaAlta`, `fechaVencimiento`, `estado`, `activo`, `planId`.
 
-### Campos que son SOLO de Alliance Gym y el sync NUNCA debe tocar
+### Campos que son SOLO de Gorilas Gym y el sync NUNCA debe tocar
 
 `coachId`, `objetivo`, `nivel`, `nivelActividad`, `estaturaCm`,
 `horarioEntreno`, `diasMeta`, `desayunaAntes`, `bienvenidaHecha`, `password`.
 
 Y por supuesto nada de las otras colecciones: `rutinas`, `asignaciones`,
 `bitacoras`, `mediciones`, `sesiones`, `planesNutricion`, `calificaciones`.
-Esos datos nacen en Alliance Gym y se perderían si el sync los pisa.
+Esos datos nacen en Gorilas Gym y se perderían si el sync los pisa.
 
 **El emparejamiento se hace por `externoId`**, no por correo ni por nombre
 (en HDeLeon el correo puede venir vacío o repetido).
@@ -190,10 +190,10 @@ puede dejar así con gente real.
 ## Decisiones pendientes
 
 1. **Mapeo de planes.** Los planes de HDeLeon hay que casarlos con la colección
-   `planes` de Alliance Gym. Se resuelve con una tabla de equivalencias una vez
+   `planes` de Gorilas Gym. Se resuelve con una tabla de equivalencias una vez
    que se vean los nombres reales.
 
-2. **¿Qué pasa con los socios que hoy existen solo en Alliance Gym?**
+2. **¿Qué pasa con los socios que hoy existen solo en Gorilas Gym?**
    Se quedan como están (sin `externoId`); el sync no los borra.
 
 ## Cada cuánto sincroniza
@@ -211,7 +211,7 @@ se pone al corriente solo cuando vuelve.
 - [ ] Mapeo de columnas HDeLeon → contrato
 - [ ] Agente en la PC del gimnasio
 - [ ] Función serverless en Vercel
-- [ ] Receptor y mezcla en Alliance Gym
+- [ ] Receptor y mezcla en Gorilas Gym
 - [ ] Primera entrada: número de socio + fecha de nacimiento → crear contraseña
 - [ ] Mover la validación de contraseñas al servidor
 - [ ] Pantalla de "socios sincronizados" para el director

@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Mod.Sesiones (rediseño v2)
+   GORILAS GYM — AG.Mod.Sesiones (rediseño v2)
    -------------------------------------------------------------
    El gimnasio ya no da clases grupales: cada socio agenda UNA
    sesión por semana con su entrenador, en un horario disponible.

@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Views.Login
+   GORILAS GYM — AG.Views.Login
    -------------------------------------------------------------
    Pantalla de acceso al sistema. NO registra rutas: la monta
    AG.App.montarLogin() con app.innerHTML = render().html y
@@ -33,19 +33,19 @@ window.AG = window.AG || {};
      Las siembra js/data/seed.js; si alguna no existe, no se pinta. */
   var DEMO = [
     {
-      email: 'director@alliancegym.mx',
+      email: 'director@gorilasgym.mx',
       password: 'admin123',
       etiqueta: 'Dirección',
       puede: 'Finanzas, socios, coaches, reportes y configuración del gimnasio.'
     },
     {
-      email: 'coach@alliancegym.mx',
+      email: 'coach@gorilasgym.mx',
       password: 'coach123',
       etiqueta: 'Coach',
       puede: 'Solo sus socios: mediciones, rutinas, nutrición y agenda.'
     },
     {
-      email: 'socio@alliancegym.mx',
+      email: 'socio@gorilasgym.mx',
       password: 'socio123',
       etiqueta: 'Socio',
       puede: 'Su rutina del día, progreso, nutrición, membresía y calificar.'
@@ -68,8 +68,8 @@ window.AG = window.AG || {};
   /* Ajustes del gimnasio, siempre con valores de respaldo. */
   function ajustes() {
     var base = {
-      nombreGym: 'ALLIANCE GYM',
-      lema: 'Más fuertes juntos',
+      nombreGym: 'GORILAS GYM',
+      lema: 'Fitness Club',
       direccion: '', telefono: '', email: '', horario: ''
     };
     try {
@@ -217,10 +217,10 @@ window.AG = window.AG || {};
     '</div>';
   }
 
-  /* 'ALLIANCE GYM' -> 'ALLIANCE <em>GYM</em>' (la última palabra en rojo). */
+  /* 'GORILAS GYM' -> 'GORILAS <em>GYM</em>' (la última palabra en rojo). */
   function tituloArteHTML(nombre) {
     var partes = String(nombre || '').trim().split(/\s+/).filter(function (p) { return p; });
-    if (!partes.length) return esc('Alliance Gym');
+    if (!partes.length) return esc('Gorilas Gym');
     if (partes.length === 1) return '<em>' + esc(partes[0]) + '</em>';
     var ultima = partes.pop();
     return esc(partes.join(' ')) + ' <em>' + esc(ultima) + '</em>';
@@ -228,7 +228,7 @@ window.AG = window.AG || {};
 
   function arteHTML(conf, datos) {
     return '<aside class="login-arte">' +
-      '<div class="login-emblema login-arte-emblema">' + icono('escudo', 28) + '</div>' +
+      '<div class="login-emblema login-arte-emblema">' + icono('gorila', 28) + '</div>' +
       '<h2>' + tituloArteHTML(conf.nombreGym) + '</h2>' +
       '<p>' + esc(conf.lema) +
         ' · Sistema de gestión integral: socios, mediciones, rutinas, nutrición y pagos en un solo lugar.</p>' +
@@ -291,7 +291,7 @@ window.AG = window.AG || {};
           icono('correo', 17) +
           '<input class="input" id="ag-login-correo" name="email" type="email" data-correo ' +
             'autocomplete="username" inputmode="email" spellcheck="false" autocapitalize="off" ' +
-            'placeholder="tucorreo@alliancegym.mx">' +
+            'placeholder="tucorreo@gorilasgym.mx">' +
         '</div>' +
       '</div>' +
 
@@ -597,7 +597,7 @@ window.AG = window.AG || {};
     var html = '<div class="login-wrap">' +
       '<section class="login-panel">' +
         '<div class="login-brand">' +
-          '<div class="login-emblema">' + icono('escudo', 30) + '</div>' +
+          '<div class="login-emblema">' + icono('gorila', 30) + '</div>' +
           '<div>' +
             '<h1>' + esc(conf.nombreGym) + '</h1>' +
             '<span>' + esc(conf.lema) + '</span>' +

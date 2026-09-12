@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Utils
+   GORILAS GYM — AG.Utils
    Utilidades base: texto, fechas, formato, DOM, modales y avisos.
    Este archivo carga PRIMERO: no depende de nada de AG al cargarse.
    Dentro de las funciones sí puede consultar AG.DB / AG.Icons.

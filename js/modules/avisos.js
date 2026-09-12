@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Mod.Avisos
+   GORILAS GYM — AG.Mod.Avisos
    -------------------------------------------------------------
    El tablón de anuncios del gimnasio. La dirección publica un
    aviso, el sistema deja una notificación a cada destinatario y
@@ -80,7 +80,7 @@ window.AG = window.AG || {};
       titulo: 'Mantenimiento programado en el área de pesas',
       para: 'todos',
       prioridad: 'normal',
-      cuerpo: 'Estimada comunidad Alliance:\n\n' +
+      cuerpo: 'Estimada comunidad Gorilas:\n\n' +
         'El próximo sábado realizaremos el mantenimiento preventivo del área de pesas, de 10:00 a 14:00 h. ' +
         'Durante ese lapso el acceso a esa zona estará restringido; el resto de las instalaciones opera con normalidad.\n\n' +
         'Te sugerimos adelantar tu entrenamiento de pierna o pedir a tu coach una variante con peso corporal para ese día. ' +
@@ -94,7 +94,7 @@ window.AG = window.AG || {};
       titulo: 'Nuevo horario de servicio a partir del próximo lunes',
       para: 'todos',
       prioridad: 'alta',
-      cuerpo: 'Estimada comunidad Alliance:\n\n' +
+      cuerpo: 'Estimada comunidad Gorilas:\n\n' +
         'A partir del próximo lunes ajustamos nuestro horario de servicio:\n\n' +
         '• Lunes a viernes: 5:00 a 23:00 h\n' +
         '• Sábado: 7:00 a 17:00 h\n' +
@@ -124,7 +124,7 @@ window.AG = window.AG || {};
       titulo: 'Horario especial por día festivo',
       para: 'todos',
       prioridad: 'alta',
-      cuerpo: 'Estimada comunidad Alliance:\n\n' +
+      cuerpo: 'Estimada comunidad Gorilas:\n\n' +
         'Por el día festivo, el gimnasio abrirá con horario especial de 8:00 a 14:00 h. ' +
         'Las clases grupales de la tarde quedan canceladas y se reprograman para la semana siguiente.\n\n' +
         'Si tienes una medición agendada o una sesión con tu coach ese día, te contactaremos para reubicarla. ' +
@@ -138,7 +138,7 @@ window.AG = window.AG || {};
       titulo: 'Ya está disponible el equipo nuevo del área funcional',
       para: 'todos',
       prioridad: 'normal',
-      cuerpo: 'Estimada comunidad Alliance:\n\n' +
+      cuerpo: 'Estimada comunidad Gorilas:\n\n' +
         'Desde hoy puedes usar el equipo nuevo del área funcional: rack de sentadilla, juego de mancuernas ' +
         'hasta 50 kg y dos bicicletas de asalto.\n\n' +
         'Antes de estrenarlo, pide a tu coach una revisión de técnica: con eso aprovechas mejor cada serie ' +

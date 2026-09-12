@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Calc
+   GORILAS GYM — AG.Calc
    Motor de cálculo fisiológico, nutricional y de negocio.
    Es el "cerebro" del sistema: aquí vive TODA la matemática.
 

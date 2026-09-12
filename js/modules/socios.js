@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — Módulo de Socios (AG.Mod.Socios)
+   GORILAS GYM — Módulo de Socios (AG.Mod.Socios)
    -------------------------------------------------------------
    Rutas que registra:
      director/socios  · coach/socios   (listado)
@@ -141,7 +141,7 @@ window.AG = window.AG || {};
       var s = DB.state && DB.state.settings;
       if (s && s.nombreGym) return String(s.nombreGym);
     } catch (e) { /* se usa el respaldo */ }
-    return 'Alliance Gym';
+    return 'Gorilas Gym';
   }
 
   /** Módulos hermanos: se llaman solo si existen, nunca revientan la app. */

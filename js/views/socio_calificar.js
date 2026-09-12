@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Views.SocioCalificar
+   GORILAS GYM — AG.Views.SocioCalificar
    -------------------------------------------------------------
    Pantalla del socio para calificar a su coach y al gimnasio.
 

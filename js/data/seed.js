@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — Generador de datos de demostración (AG.Seed)
+   GORILAS GYM — Generador de datos de demostración (AG.Seed)
 
    AG.Seed.construir() devuelve el objeto `state` COMPLETO y válido
    según el contrato de docs/ARQUITECTURA.md, listo para AG.DB.
@@ -234,7 +234,7 @@ window.AG = window.AG || {};
           'Sin costo de inscripción',
           'Revaloración corporal completa cada mes',
           'Congelamiento de 15 días sin costo',
-          'Playera oficial Alliance Gym'
+          'Playera oficial Gorilas Gym'
         ],
         color: '#9b7bf0', activo: true, inscripcion: 0
       },
@@ -261,11 +261,11 @@ window.AG = window.AG || {};
     return {
       id: 'u_0001', rol: 'director',
       nombre: 'Julio César', apellidos: 'Ramírez',
-      email: 'director@alliancegym.mx', telefono: '33 1188 4520',
+      email: 'director@gorilasgym.mx', telefono: '33 1188 4520',
       password: 'admin123', avatarColor: '#e4322b', activo: true,
       creado: fechaBase,
       especialidad: 'Dirección general',
-      bio: 'Fundador de Alliance Gym. Licenciado en administración y entrenador certificado; lleva 14 años levantando gimnasios de barrio con estándares de alto rendimiento.',
+      bio: 'Fundador de Gorilas Gym. Licenciado en administración y entrenador certificado; lleva 14 años levantando gimnasios de barrio con estándares de alto rendimiento.',
       certificaciones: ['Licenciatura en Administración de Empresas', 'Personal Trainer NSCA-CPT', 'Diplomado en gestión de centros deportivos'],
       fechaContratacion: fechaBase, sueldo: 0, cupoMaximo: 0,
       horario: 'Lun a Vie 8:00–19:00 · Sáb 9:00–14:00',
@@ -276,7 +276,7 @@ window.AG = window.AG || {};
   var COACHES_BASE = [
     {
       id: 'u_0002', nombre: 'Marco', apellidos: 'Ibarra',
-      email: 'coach@alliancegym.mx', password: 'coach123', telefono: '33 2140 7788',
+      email: 'coach@gorilasgym.mx', password: 'coach123', telefono: '33 2140 7788',
       color: '#f2711c', especialidad: 'Fuerza e hipertrofia',
       bio: 'Entrenador de fuerza con 11 años de piso. Trabaja progresiones de barra, técnica de básicos y planificación por bloques. Es el coach de la cuenta demo de socio.',
       certificaciones: ['NSCA-CSCS', 'Certificación en Levantamiento Olímpico Nivel 1', 'Especialidad en periodización deportiva'],
@@ -286,7 +286,7 @@ window.AG = window.AG || {};
     },
     {
       id: 'u_0003', nombre: 'Daniela', apellidos: 'Fuentes',
-      email: 'daniela.fuentes@alliancegym.mx', password: 'coach123', telefono: '33 2965 1140',
+      email: 'daniela.fuentes@gorilasgym.mx', password: 'coach123', telefono: '33 2965 1140',
       color: '#3fbf7f', especialidad: 'Nutrición deportiva',
       bio: 'Nutrióloga con maestría en nutrición deportiva. Arma planes de alimentación reales, con comida mexicana y presupuestos de la vida diaria, sin dietas imposibles.',
       certificaciones: ['Licenciatura en Nutrición (UdeG)', 'Maestría en Nutrición Deportiva', 'Certificación ISAK Nivel 1 en antropometría'],
@@ -296,7 +296,7 @@ window.AG = window.AG || {};
     },
     {
       id: 'u_0004', nombre: 'Paulina', apellidos: 'Zavala',
-      email: 'paulina.zavala@alliancegym.mx', password: 'coach123', telefono: '33 3372 6015',
+      email: 'paulina.zavala@gorilasgym.mx', password: 'coach123', telefono: '33 3372 6015',
       color: '#ec4899', especialidad: 'Acondicionamiento femenino',
       bio: 'Especialista en entrenamiento de fuerza para mujeres: glúteo, piernas y recomposición corporal. Organiza los retos y eventos del gimnasio, siempre con la sala llena.',
       certificaciones: ['Licenciatura en Cultura Física y Deportes', 'Especialidad en entrenamiento femenino', 'Instructora certificada de Zumba Fitness'],
@@ -306,7 +306,7 @@ window.AG = window.AG || {};
     },
     {
       id: 'u_0005', nombre: 'Ricardo', apellidos: 'Mendoza',
-      email: 'ricardo.mendoza@alliancegym.mx', password: 'coach123', telefono: '33 1804 9932',
+      email: 'ricardo.mendoza@gorilasgym.mx', password: 'coach123', telefono: '33 1804 9932',
       color: '#5aa9f0', especialidad: 'Adulto mayor y rehabilitación',
       bio: 'Fisioterapeuta de formación. Trabaja movilidad, equilibrio y readaptación después de lesión; es quien recibe a los socios que llegan con indicación médica.',
       certificaciones: ['Licenciatura en Fisioterapia', 'Especialidad en readaptación funcional', 'Certificación en ejercicio para adulto mayor (ACSM)'],
@@ -316,7 +316,7 @@ window.AG = window.AG || {};
     },
     {
       id: 'u_0006', nombre: 'Iván', apellidos: 'Castañeda',
-      email: 'ivan.castaneda@alliancegym.mx', password: 'coach123', telefono: '33 2517 3364',
+      email: 'ivan.castaneda@gorilasgym.mx', password: 'coach123', telefono: '33 2517 3364',
       color: '#eab308', especialidad: 'HIIT y entrenamiento funcional',
       bio: 'Viene del atletismo de medio fondo. Diseña circuitos metabólicos y funcionales; sus sesiones de las 6:00 am son las más solicitadas del gimnasio.',
       certificaciones: ['Entrenador Personal Certificado ACE', 'Instructor de Ciclismo Indoor', 'Certificación en Kettlebell Nivel 1'],
@@ -1509,12 +1509,12 @@ window.AG = window.AG || {};
       para: 'socios', prioridad: 'normal', diasAtras: 11
     },
     {
-      titulo: 'Inscripciones abiertas: Carrera y caminata 5K Alliance',
-      cuerpo: 'Corre o camina cinco kilómetros con la familia Alliance. La inscripción incluye playera, número y agua al llegar. Apúntate en recepción o desde la sección de eventos de tu panel; el cupo es limitado.',
+      titulo: 'Inscripciones abiertas: Carrera y caminata 5K Gorilas',
+      cuerpo: 'Corre o camina cinco kilómetros con la familia Gorilas. La inscripción incluye playera, número y agua al llegar. Apúntate en recepción o desde la sección de eventos de tu panel; el cupo es limitado.',
       para: 'todos', prioridad: 'normal', diasAtras: 6
     },
     {
-      titulo: 'Reto de verano Alliance: 8 semanas',
+      titulo: 'Reto de verano Gorilas: 8 semanas',
       cuerpo: 'Arranca el reto de ocho semanas. Se mide al inicio y al cierre; gana quien logre el mejor cambio combinado de grasa y músculo, no quien baje más kilos. La inscripción es gratuita para socios activos y el premio es una membresía semestral. Apúntate con tu coach antes del viernes.',
       para: 'socios', prioridad: 'alta', diasAtras: 19
     },
@@ -1770,7 +1770,7 @@ window.AG = window.AG || {};
      relativas a hoy y caen en el día de la semana indicado (0 = domingo). */
   var EVENTOS_DEF = [
     {
-      nombre: 'Reto Alliance de 8 semanas', tipo: 'reto', coach: 'u_0006',
+      nombre: 'Reto Gorilas de 8 semanas', tipo: 'reto', coach: 'u_0006',
       pasado: true, dias: 12, dow: 1, hora: '19:00', dur: 90,
       lugar: 'Zona funcional', cupo: 30, inscritos: 22, costo: 0, color: '#e4322b', conAna: true,
       descripcion: 'Ocho semanas de constancia con medición al inicio y al cierre. Gana quien logre el mejor cambio de grasa y músculo, no quien baje más kilos. Premio: una membresía semestral.'
@@ -1794,13 +1794,13 @@ window.AG = window.AG || {};
       descripcion: 'Cómo armar desayunos, comidas y cenas con lo que hay en el mercado: huevo, frijol, tortilla, arroz, pollo y atún. Con recetario para llevar.'
     },
     {
-      nombre: 'Carrera y caminata 5K Alliance', tipo: 'competencia', coach: 'u_0005',
+      nombre: 'Carrera y caminata 5K Gorilas', tipo: 'competencia', coach: 'u_0005',
       pasado: false, dias: 30, dow: 0, hora: '07:00', dur: 120,
       lugar: 'Salida desde el gimnasio · circuito del parque', cupo: 40, inscritos: 24, costo: 150, color: '#9b7bf0', conAna: false,
       descripcion: 'Cinco kilómetros corriendo o caminando, cada quien a su ritmo. Incluye playera, número y agua al llegar. Familiares bienvenidos.'
     },
     {
-      nombre: 'Convivencia de aniversario Alliance', tipo: 'social', coach: 'u_0004',
+      nombre: 'Convivencia de aniversario Gorilas', tipo: 'social', coach: 'u_0004',
       pasado: true, dias: 27, dow: 6, hora: '18:00', dur: 180,
       lugar: 'Terraza del gimnasio', cupo: 60, inscritos: 38, costo: 0, color: '#ec4899', conAna: true,
       descripcion: 'Celebramos un año más contigo: carne asada, rifa de membresías y reconocimiento a los socios más constantes del año.'
@@ -1828,7 +1828,7 @@ window.AG = window.AG || {};
       sustituye: ['desayuno', 'pre_entreno'], icono: 'sol'
     },
     {
-      nombre: 'Barra de proteína Alliance',
+      nombre: 'Barra de proteína Gorilas',
       descripcion: 'Barra de 60 g, sabor chocolate o cacahuate.',
       precio: 45, kcal: 220, proteina: 20, carbos: 23, grasa: 7,
       sustituye: ['colacion', 'post_entreno'], icono: 'rayo'
@@ -1988,7 +1988,7 @@ window.AG = window.AG || {};
 
       var correo;
       if (esAna) {
-        correo = 'socio@alliancegym.mx';
+        correo = 'socio@gorilasgym.mx';
       } else {
         var base = sinAcentos(persona[0].split(' ')[0]) + '.' + sinAcentos(persona[1]);
         correo = base + '@' + elegir(DOMINIOS);
@@ -2138,12 +2138,12 @@ window.AG = window.AG || {};
     var activos = socios.filter(function (s) { return s.estado === 'activo' || s.estado === 'vencido'; });
     var productos = [
       ['Proteína de suero 2 lb', 890, 'producto'],
-      ['Playera oficial Alliance', 320, 'producto'],
-      ['Shaker Alliance', 150, 'producto'],
+      ['Playera oficial Gorilas', 320, 'producto'],
+      ['Shaker Gorilas', 150, 'producto'],
       ['Cinturón de levantamiento', 640, 'producto'],
       ['Pre-entreno 30 servicios', 560, 'producto'],
       ['Guantes de entrenamiento', 280, 'producto'],
-      ['Barra de proteína Alliance', 45, 'producto'],
+      ['Barra de proteína Gorilas', 45, 'producto'],
       ['Licuado de proteína con plátano', 65, 'producto'],
       ['Licuado de proteína con plátano', 65, 'producto'],
       ['Avena con fruta y canela', 45, 'producto'],
@@ -3682,14 +3682,14 @@ window.AG = window.AG || {};
 
   function settingsPorDefecto() {
     return {
-      nombreGym: 'ALLIANCE GYM',
-      lema: 'Más fuertes juntos',
+      nombreGym: 'GORILAS GYM',
+      lema: 'Fitness Club',
       moneda: 'MXN',
       simbolo: '$',
       locale: 'es-MX',
       direccion: 'Av. Vallarta 1250, Col. Americana, Guadalajara, Jal.',
       telefono: '33 1234 5678',
-      email: 'contacto@alliancegym.mx',
+      email: 'contacto@gorilasgym.mx',
       horario: 'Lun a Vie 5:00–23:00 · Sáb 7:00–17:00 · Dom 8:00–14:00',
       tema: 'oscuro',
       diasGraciaPago: 5,

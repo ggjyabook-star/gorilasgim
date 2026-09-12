@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Mod.Coaches
+   GORILAS GYM — AG.Mod.Coaches
    Gestión del equipo de entrenadores (solo dirección).
 
    Rutas que registra:

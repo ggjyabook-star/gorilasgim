@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — Catálogo profesional de alimentos
+   GORILAS GYM — Catálogo profesional de alimentos
    Biblioteca enfocada a México y Latinoamérica.
 
    Todos los valores nutricionales son POR 100 g de porción

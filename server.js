@@ -1,4 +1,4 @@
-/* Servidor estático mínimo para Alliance Gym (sin dependencias).
+/* Servidor estático mínimo para Gorilas Gym (sin dependencias).
    Uso:  node server.js   ->  http://localhost:5173  */
 const http = require('http');
 const fs = require('fs');
@@ -46,7 +46,7 @@ http.createServer((req, res) => {
   });
 }).listen(PUERTO, () => {
   console.log('');
-  console.log('  ALLIANCE GYM — Sistema de gestión');
+  console.log('  GORILAS GYM — Sistema de gestión');
   console.log('  ---------------------------------');
   console.log('  Abre en tu navegador:  http://localhost:' + PUERTO);
   console.log('  Para detener: Ctrl + C');

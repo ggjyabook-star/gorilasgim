@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Mod.Eventos (rediseño v2)
+   GORILAS GYM — AG.Mod.Eventos (rediseño v2)
    -------------------------------------------------------------
    Actividades ocasionales del gimnasio: retos, clínicas de
    técnica, competencias internas, talleres y convivencias. El

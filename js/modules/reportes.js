@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Mod.Reportes
+   GORILAS GYM — AG.Mod.Reportes
    -------------------------------------------------------------
    Centro de inteligencia de negocio del dueño.
 
@@ -1157,7 +1157,7 @@ window.AG = window.AG || {};
       socios: socios2,
       entrenamiento: construirEntrenamiento(ctxDatos),
       satisfaccion: construirSatisfaccion(ctxDatos),
-      nombreGym: conf.nombreGym || 'Alliance Gym'
+      nombreGym: conf.nombreGym || 'Gorilas Gym'
     };
 
     return datos;

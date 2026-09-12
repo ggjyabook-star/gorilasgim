@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Views.Director (rediseño v2)
+   GORILAS GYM — AG.Views.Director (rediseño v2)
    -------------------------------------------------------------
    El inicio del dueño. Ruta: 'director/inicio'.
 

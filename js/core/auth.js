@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — Sesión y permisos (AG.Auth)
+   GORILAS GYM — Sesión y permisos (AG.Auth)
    Único archivo, junto con db.js, autorizado a tocar localStorage.
    Guarda la sesión en 'alliance_gym_sesion' como { usuarioId, entradaEn }.
    ============================================================= */

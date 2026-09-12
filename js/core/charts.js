@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — Motor de gráficas SVG (AG.Charts)
+   GORILAS GYM — Motor de gráficas SVG (AG.Charts)
    -------------------------------------------------------------
    SVG puro, sin librerías, sin red. Cada función devuelve un
    STRING con un <svg> completo y responsivo (viewBox + ancho 100 %).

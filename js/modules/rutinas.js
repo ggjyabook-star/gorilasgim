@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — Rutinas de entrenamiento (AG.Mod.Rutinas)
+   GORILAS GYM — Rutinas de entrenamiento (AG.Mod.Rutinas)
    -------------------------------------------------------------
    Rutas que registra:
      director/rutinas  · coach/rutinas   -> listado (Plantillas · Asignaciones)

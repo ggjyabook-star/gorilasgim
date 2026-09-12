@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — Arranque de la aplicación
+   GORILAS GYM — Arranque de la aplicación
    Monta el login o el shell (sidebar + topbar + vista) según sesión.
    ============================================================= */
 window.AG = window.AG || {};
@@ -42,7 +42,7 @@ window.AG = window.AG || {};
         '<div class="backdrop-nav" id="backdrop-nav"></div>' +
         '<aside class="sidebar" id="sidebar">' +
           '<div class="sidebar-logo">' +
-            '<div class="logo-escudo">' + AG.Icons.get('escudo', 26) + '</div>' +
+            '<div class="logo-escudo">' + AG.Icons.get('gorila', 26) + '</div>' +
             '<div class="logo-txt"><b>' + AG.Utils.esc(s.nombreGym) + '</b><span>' + AG.Utils.esc(s.lema || '') + '</span></div>' +
           '</div>' +
           '<nav class="nav" id="nav">' + AG.Router.construirNav(usuario.rol) + '</nav>' +
@@ -72,6 +72,10 @@ window.AG = window.AG || {};
     App.engancharShell();
     AG.Router.iniciar();
     App.pintarNotificaciones();
+
+    /* Si hay un puente con el lector de acceso, empieza a traer las
+       entradas solo. Si no lo hay, no pasa nada: el sitio sigue igual. */
+    if (AG.Puente) AG.Puente.iniciar();
   };
 
   App.etiquetaRol = function (rol) {
@@ -95,7 +99,9 @@ window.AG = window.AG || {};
 
     $('#btn-salir').addEventListener('click', function () {
       AG.Utils.confirmar('¿Cerrar la sesión?', 'Salir').then(function (ok) {
-        if (ok) { AG.Auth.salir(); location.hash = ''; App.montarLogin(); }
+        if (!ok) return;
+        if (AG.Puente) AG.Puente.detener();
+        AG.Auth.salir(); location.hash = ''; App.montarLogin();
       });
     });
 

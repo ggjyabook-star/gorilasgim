@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Mod.Mediciones
+   GORILAS GYM — AG.Mod.Mediciones
    -------------------------------------------------------------
    El módulo más importante del sistema: el coach mide al INICIO
    del mes y al FINAL del mes; con esas dos mediciones el sistema

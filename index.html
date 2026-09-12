@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#111214">
-  <meta name="description" content="Sistema de gestión integral para Alliance Gym: socios, coaches, pagos, mediciones, rutinas y nutrición.">
-  <title>Alliance Gym · Sistema de Gestión</title>
+  <meta name="description" content="Sistema de gestión integral para Gorilas Gym: socios, coaches, pagos, mediciones, rutinas y nutrición.">
+  <title>Gorilas Gym · Sistema de Gestión</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -14,8 +14,21 @@
   <!-- Contenedor único: aquí se pinta el login o el shell de la app -->
   <div id="app">
     <div class="boot">
-      <div class="boot-logo">AG</div>
-      <p>Cargando Alliance Gym…</p>
+      <div class="boot-logo">
+        <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor"
+             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <circle cx="4.3" cy="10.2" r="2.2"/>
+          <circle cx="19.7" cy="10.2" r="2.2"/>
+          <path d="M12 3.2c-3.6 0-6.2 2.3-6.2 5.6 0 1.3.3 2.2.3 3.2 0 4.3 2.5 8 5.9 8s5.9-3.7 5.9-8c0-1 .3-1.9.3-3.2 0-3.3-2.6-5.6-6.2-5.6z"/>
+          <path d="M7.4 9.7c1.4-.9 7.8-.9 9.2 0"/>
+          <path d="M8.7 11.7 11 12.8"/>
+          <path d="M15.3 11.7 13 12.8"/>
+          <path d="M12 13.5c2.1 0 3.6 1.2 3.6 2.7s-1.5 2.7-3.6 2.7-3.6-1.2-3.6-2.7 1.5-2.7 3.6-2.7z"/>
+          <path d="M10.9 16.2h.01"/>
+          <path d="M13.1 16.2h.01"/>
+        </svg>
+      </div>
+      <p>Cargando Gorilas Gym…</p>
     </div>
   </div>
 
@@ -40,6 +53,9 @@
   <script src="js/core/auth.js"></script>
   <script src="js/core/router.js"></script>
 
+  <!-- ===== Puente con el lector de acceso (opcional) ===== -->
+  <script src="js/core/puente.js"></script>
+
   <!-- ===== Módulos de gestión ===== -->
   <script src="js/modules/socios.js"></script>
   <script src="js/modules/pagos.js"></script>
@@ -50,6 +66,7 @@
   <script src="js/modules/coaches.js"></script>
   <script src="js/modules/calificaciones.js"></script>
   <script src="js/modules/asistencia.js"></script>
+  <script src="js/modules/acceso.js"></script>
   <script src="js/modules/sesiones.js"></script>
   <script src="js/modules/eventos.js"></script>
   <script src="js/modules/avisos.js"></script>

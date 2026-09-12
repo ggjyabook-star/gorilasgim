@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Mod.Config
+   GORILAS GYM — AG.Mod.Config
    -------------------------------------------------------------
    Panel de configuración del sistema. Solo dirección entra aquí.
 
@@ -490,7 +490,7 @@ window.AG = window.AG || {};
     '</div>';
 
     return '<form class="stack" data-form-gimnasio novalidate>' +
-      tarjetaHTML('escudo', 'Identidad', identidad, '', 'El nombre y el lema se ven en todo el sistema.') +
+      tarjetaHTML('gorila', 'Identidad', identidad, '', 'El nombre y el lema se ven en todo el sistema.') +
       tarjetaHTML('ubicacion', 'Contacto', contacto, '', 'Datos que se imprimen en recibos y avisos.') +
       tarjetaHTML('dinero', 'Moneda y formato', formato, '', 'Así se muestran todas las cantidades del sistema.') +
       tarjetaHTML('meta', 'Metas del negocio', metas, '', 'Con estos números se calculan avances y utilidad.') +
@@ -2255,7 +2255,7 @@ window.AG = window.AG || {};
      ============================================================= */
 
   var COLORES_MARCA = [
-    { variable: '--rojo', nombre: 'Rojo Alliance', uso: 'Acciones y acentos' },
+    { variable: '--rojo', nombre: 'Rojo Gorilas', uso: 'Acciones y acentos' },
     { variable: '--carbon', nombre: 'Carbón', uso: 'Fondo general' },
     { variable: '--panel', nombre: 'Panel', uso: 'Tarjetas y formularios' },
     { variable: '--ok', nombre: 'Éxito', uso: 'Al corriente, mejoras' },
@@ -2279,7 +2279,7 @@ window.AG = window.AG || {};
 
     var selector = '<div class="stack-sm">' +
       '<div class="radio-cards dos">' +
-        tarjetaTema('oscuro', 'Oscuro', 'El look de casa: fondo carbón y rojo Alliance. Descansa la vista en el gimnasio.', 'luna', tema) +
+        tarjetaTema('oscuro', 'Oscuro', 'El look de casa: fondo carbón y rojo Gorilas. Descansa la vista en el gimnasio.', 'luna', tema) +
         tarjetaTema('claro', 'Claro', 'Fondo claro, ideal para recepción con mucha luz y para imprimir pantallas.', 'sol', tema) +
       '</div>' +
       '<p class="mini muted">El cambio se ve al instante y queda guardado para la próxima vez que entres. ' +
@@ -2301,24 +2301,24 @@ window.AG = window.AG || {};
 
     var identidad = '<div class="stack-sm">' +
       '<div class="cfg-marca">' +
-        '<div class="cfg-marca-escudo">' + ico('escudo', 24) + '</div>' +
+        '<div class="cfg-marca-escudo">' + ico('gorila', 24) + '</div>' +
         '<div class="cfg-marca-txt">' +
-          '<b>' + esc(s.nombreGym || 'ALLIANCE GYM') + '</b>' +
+          '<b>' + esc(s.nombreGym || 'GORILAS GYM') + '</b>' +
           '<span class="mini muted">' + esc(s.lema || 'Sin lema definido') + '</span>' +
         '</div>' +
       '</div>' +
       '<p class="mini muted">Así se ve tu marca en el menú lateral. El nombre y el lema se editan en la pestaña ' +
-        '<b>Gimnasio</b>; el escudo y la paleta son parte de la identidad visual del sistema.</p>' +
+        '<b>Gimnasio</b>; el gorila y la paleta son parte de la identidad visual del sistema.</p>' +
       muestras +
-      '<div class="aviso aviso-rojo">' + ico('escudo', 18) +
-        '<span>El rojo Alliance y el negro carbón son la identidad de la marca: se mantienen iguales en los dos temas ' +
+      '<div class="aviso aviso-rojo">' + ico('gorila', 18) +
+        '<span>El rojo Gorilas y el negro carbón son la identidad de la marca: se mantienen iguales en los dos temas ' +
         'para que recibos, pantallas e impresiones se reconozcan siempre como del gimnasio. ' +
         'Si algún día quieres otra paleta, se cambia en <b>css/styles.css</b>, no aquí.</span></div>' +
     '</div>';
 
     return '<div class="stack">' +
       tarjetaHTML('sol', 'Tema de la aplicación', selector, '', 'Elige cómo se ve el sistema en esta computadora.') +
-      tarjetaHTML('escudo', 'Identidad visual', identidad, '', 'Marca, colores y su uso en el sistema.') +
+      tarjetaHTML('gorila', 'Identidad visual', identidad, '', 'Marca, colores y su uso en el sistema.') +
     '</div>';
   }
 

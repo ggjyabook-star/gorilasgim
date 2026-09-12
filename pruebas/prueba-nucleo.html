@@ -2,7 +2,7 @@
 <html lang="es" data-tema="oscuro">
 <head>
 <meta charset="utf-8">
-<title>Prueba del núcleo — Alliance Gym</title>
+<title>Prueba del núcleo — Gorilas Gym</title>
 <link rel="stylesheet" href="../css/styles.css">
 <style>
   body{padding:20px;font-family:system-ui}
@@ -81,7 +81,7 @@
     'calculadora calendario reloj estrella chat campana config salir buscar mas editar basura ojo check x alerta ' +
     'flecha-arriba flecha-abajo flecha-der flecha-izq descargar subir imprimir usuario candado correo telefono ' +
     'ubicacion trofeo fuego gota luna sol menu filtro agua sueno foto qr whatsapp info historial meta cinta rayo ' +
-    'escudo clase nutricion').split(' ');
+    'escudo gorila clase nutricion').split(' ');
   var iconosMal = ICONOS.filter(function (n) {
     var s = AG.Icons.get(n, 20);
     return !s || s.indexOf('<svg') !== 0;
@@ -230,9 +230,9 @@
     t('1 director', function () { return st.usuarios.filter(function(u){return u.rol==='director';}).length === 1 || 'hay ' + st.usuarios.filter(function(u){return u.rol==='director';}).length; });
     t('5 coaches', function () { return coaches.length === 5 || 'hay ' + coaches.length; });
     t('~45 socios', function () { return socios.length >= 40 || 'hay ' + socios.length; });
-    t('cuenta demo director', function () { return st.usuarios.some(function(u){return u.email==='director@alliancegym.mx' && u.password==='admin123';}) || 'no existe'; });
-    t('cuenta demo coach', function () { return st.usuarios.some(function(u){return u.email==='coach@alliancegym.mx' && u.password==='coach123';}) || 'no existe'; });
-    t('cuenta demo socio', function () { return st.usuarios.some(function(u){return u.email==='socio@alliancegym.mx' && u.password==='socio123';}) || 'no existe'; });
+    t('cuenta demo director', function () { return st.usuarios.some(function(u){return u.email==='director@gorilasgym.mx' && u.password==='admin123';}) || 'no existe'; });
+    t('cuenta demo coach', function () { return st.usuarios.some(function(u){return u.email==='coach@gorilasgym.mx' && u.password==='coach123';}) || 'no existe'; });
+    t('cuenta demo socio', function () { return st.usuarios.some(function(u){return u.email==='socio@gorilasgym.mx' && u.password==='socio123';}) || 'no existe'; });
     t('emails únicos', function () {
       var s={},d=[]; st.usuarios.forEach(function(u){ if(s[u.email])d.push(u.email); s[u.email]=1; });
       return d.length===0 || 'duplicados: ' + d.slice(0,3).join(',');
@@ -326,7 +326,7 @@
     });
 
     seccion('Coherencia del ciclo mensual');
-    var ana = st.usuarios.filter(function(u){return u.email==='socio@alliancegym.mx';})[0];
+    var ana = st.usuarios.filter(function(u){return u.email==='socio@gorilasgym.mx';})[0];
     t('Ana Sofía existe', function () { return !!ana || 'no existe'; });
     if (ana) {
       var medAna = st.mediciones.filter(function(m){return m.socioId===ana.id;});
@@ -384,17 +384,17 @@
   t('estadisticas()', function () { return typeof AG.DB.estadisticas === 'function' ? !!AG.DB.estadisticas() : 'no existe'; });
   ['disponibilidadDe','sesionesDe','sesionesDeCoach','sesionDeLaSemana','huecosDe','eventosProximos'].forEach(function (f) { t('DB.' + f + '()', function () { return typeof AG.DB[f] === 'function' || 'no existe'; }); });
   t('huecosDe(coach, fecha) devuelve huecos', function () { var c=AG.DB.coaches()[0]; var d=AG.DB.disponibilidadDe(c.id)[0]; if(!d) return 'coach sin disponibilidad'; var DIAS=['domingo','lunes','martes','miercoles','jueves','viernes','sabado']; var hoy=new Date(); for(var i=0;i<7;i++){ var f=new Date(hoy); f.setDate(hoy.getDate()+i); var nom=DIAS[f.getDay()]; if(nom===d.dia.normalize('NFD').replace(/[̀-ͯ]/g,'')){ var iso=f.getFullYear()+'-'+String(f.getMonth()+1).padStart(2,'0')+'-'+String(f.getDate()).padStart(2,'0'); var h=AG.DB.huecosDe(c.id, iso); return (Array.isArray(h)&&h.length>0&&typeof h[0].libre==='boolean') || 'devolvió ' + JSON.stringify(h).slice(0,60); } } return 'no encontré el día'; });
-  t('sesionDeLaSemana(Ana)', function () { var a=AG.DB.get('usuarios').filter(function(u){return u.email==='socio@alliancegym.mx';})[0]; var s=AG.DB.sesionDeLaSemana(a.id, AG.Utils.hoy()); return (s===null||typeof s==='object') || 'devolvió ' + typeof s; });
+  t('sesionDeLaSemana(Ana)', function () { var a=AG.DB.get('usuarios').filter(function(u){return u.email==='socio@gorilasgym.mx';})[0]; var s=AG.DB.sesionDeLaSemana(a.id, AG.Utils.hoy()); return (s===null||typeof s==='object') || 'devolvió ' + typeof s; });
   t('eventosProximos()', function () { var e=AG.DB.eventosProximos(3); return (Array.isArray(e)) || 'no es array'; });
 
   /* ---------- Auth ---------- */
   seccion('AG.Auth');
-  t('entrar director', function () { var r = AG.Auth.entrar('director@alliancegym.mx','admin123'); return r.ok === true || 'error: ' + r.error; });
-  t('entrar coach', function () { var r = AG.Auth.entrar('coach@alliancegym.mx','coach123'); return r.ok === true || 'error: ' + r.error; });
-  t('entrar socio', function () { var r = AG.Auth.entrar('socio@alliancegym.mx','socio123'); return r.ok === true || 'error: ' + r.error; });
-  t('rechaza contraseña mala', function () { var r = AG.Auth.entrar('socio@alliancegym.mx','xxx'); return r.ok === false || 'aceptó una contraseña incorrecta'; });
+  t('entrar director', function () { var r = AG.Auth.entrar('director@gorilasgym.mx','admin123'); return r.ok === true || 'error: ' + r.error; });
+  t('entrar coach', function () { var r = AG.Auth.entrar('coach@gorilasgym.mx','coach123'); return r.ok === true || 'error: ' + r.error; });
+  t('entrar socio', function () { var r = AG.Auth.entrar('socio@gorilasgym.mx','socio123'); return r.ok === true || 'error: ' + r.error; });
+  t('rechaza contraseña mala', function () { var r = AG.Auth.entrar('socio@gorilasgym.mx','xxx'); return r.ok === false || 'aceptó una contraseña incorrecta'; });
   t('rechaza correo inexistente', function () { var r = AG.Auth.entrar('nadie@x.mx','x'); return r.ok === false || 'aceptó un correo inexistente'; });
-  t('actual() tras entrar', function () { AG.Auth.entrar('socio@alliancegym.mx','socio123'); return !!AG.Auth.actual() || 'sin usuario'; });
+  t('actual() tras entrar', function () { AG.Auth.entrar('socio@gorilasgym.mx','socio123'); return !!AG.Auth.actual() || 'sin usuario'; });
   t('es(rol)', function () { return AG.Auth.es('socio') === true || 'falla'; });
   t('puedeVer coach/socio', function () { return typeof AG.Auth.puedeVer === 'function' ? true : 'no existe puedeVer'; });
   AG.Auth.salir();

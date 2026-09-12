@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Views.SocioProgreso
+   GORILAS GYM — AG.Views.SocioProgreso
    -------------------------------------------------------------
    Ruta: 'socio/progreso'  (solo rol 'socio')
 

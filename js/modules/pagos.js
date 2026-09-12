@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — Pagos y finanzas (AG.Mod.Pagos)
+   GORILAS GYM — Pagos y finanzas (AG.Mod.Pagos)
    -------------------------------------------------------------
    Ruta: 'director/pagos' con tres pestañas:
      · Movimientos — tabla filtrable, exportable e imprimible
@@ -1161,7 +1161,7 @@ window.AG = window.AG || {};
       '<div class="hoja">' +
         '<div class="hoja-head">' +
           '<div style="min-width:0">' +
-            '<h2 style="margin:0 0 2px;font-size:20px;letter-spacing:-.02em">' + esc(conf.nombreGym || 'Alliance Gym') + '</h2>' +
+            '<h2 style="margin:0 0 2px;font-size:20px;letter-spacing:-.02em">' + esc(conf.nombreGym || 'Gorilas Gym') + '</h2>' +
             (conf.lema ? '<p class="mini muted" style="margin:0 0 6px">' + esc(conf.lema) + '</p>' : '') +
             '<p class="mini muted" style="margin:0;line-height:1.6">' + contacto.join('<br>') + '</p>' +
           '</div>' +
@@ -1222,7 +1222,7 @@ window.AG = window.AG || {};
   /** Documento HTML autónomo (para el botón Descargar). */
   function reciboDocumento(pago) {
     var conf = ajustes();
-    var titulo = 'Recibo ' + (pago.folio || '') + ' · ' + (conf.nombreGym || 'Alliance Gym');
+    var titulo = 'Recibo ' + (pago.folio || '') + ' · ' + (conf.nombreGym || 'Gorilas Gym');
     var css =
       'body{margin:0;padding:24px;background:#f4f4f5;color:#111;' +
       'font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}' +
@@ -1679,7 +1679,7 @@ window.AG = window.AG || {};
 
     // Se usa el nombre del gimnasio para dejar rastro claro en la consola de la demo
     if (window.console && typeof window.console.info === 'function') {
-      window.console.info((conf.nombreGym || 'Alliance Gym') + ': cobro ' + guardado.folio + ' registrado.');
+      window.console.info((conf.nombreGym || 'Gorilas Gym') + ': cobro ' + guardado.folio + ' registrado.');
     }
   }
 
@@ -1844,7 +1844,7 @@ window.AG = window.AG || {};
 
   function mensajeRecordatorio(fila) {
     var conf = ajustes();
-    var gym = conf.nombreGym || 'Alliance Gym';
+    var gym = conf.nombreGym || 'Gorilas Gym';
     var socio = fila.socio;
     var nombre = (socio.nombre || U.nombreCompleto(socio)).split(' ')[0];
     var plan = fila.plan ? fila.plan.nombre : 'tu plan';
@@ -2026,7 +2026,7 @@ window.AG = window.AG || {};
           '<div>' +
             '<h1 class="page-title">Pagos y finanzas</h1>' +
             '<p class="page-sub">' + esc('Caja, cobranza y análisis de ingresos de ' +
-              (conf.nombreGym || 'Alliance Gym') + '.') + '</p>' +
+              (conf.nombreGym || 'Gorilas Gym') + '.') + '</p>' +
           '</div>' +
           '<div class="page-acciones">' +
             '<button type="button" class="btn btn-primary" data-nuevo>' + ic('mas', 17) + ' Registrar cobro</button>' +

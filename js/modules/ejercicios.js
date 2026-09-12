@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — Biblioteca de ejercicios (AG.Mod.Ejercicios)
+   GORILAS GYM — Biblioteca de ejercicios (AG.Mod.Ejercicios)
    -------------------------------------------------------------
    Rediseño v2: el socio ENTIENDE el ejercicio sin leer. Cada
    tarjeta muestra la ilustración animada de AG.Ilustra; el detalle

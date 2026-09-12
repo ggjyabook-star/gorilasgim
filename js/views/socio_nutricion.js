@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Views.SocioNutricion
+   GORILAS GYM — AG.Views.SocioNutricion
    -------------------------------------------------------------
    Dos pantallas del socio:
 

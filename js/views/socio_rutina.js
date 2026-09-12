@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — Mi rutina (AG.Views.SocioRutina)
+   GORILAS GYM — Mi rutina (AG.Views.SocioRutina)
    -------------------------------------------------------------
    Ruta que registra:
      socio/rutina   roles ['socio']   nav: Mi entrenamiento · Mi rutina (1)

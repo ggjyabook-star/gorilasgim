@@ -1,4 +1,4 @@
-# 📘 Manual de operación — ALLIANCE GYM
+# 📘 Manual de operación — GORILAS GYM
 
 Guía práctica para poner a trabajar el sistema en el gimnasio. Escrita para que la use cualquiera,
 sin conocimientos técnicos.
@@ -10,7 +10,7 @@ sin conocimientos técnicos.
 El sistema llega con un gimnasio de demostración (45 socios, 5 coaches y 8 meses de historia) para que
 puedas ver cómo se ve todo funcionando. Cuando ya lo hayas explorado, vacíalo y captura tu información real:
 
-1. Entra como **Dirección** (`director@alliancegym.mx` / `admin123`).
+1. Entra como **Dirección** (`director@gorilasgym.mx` / `admin123`).
 2. Ve a **Configuración → Gimnasio** y pon tus datos: nombre, lema, dirección, teléfono, horario y moneda.
 3. Ve a **Configuración → Planes** y captura tus precios reales (mensual, trimestral, anual, visita…).
 4. Ve a **Configuración → Metas** (misma pestaña de Gimnasio) y define:

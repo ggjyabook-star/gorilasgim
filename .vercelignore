@@ -2,6 +2,8 @@
 # a Vercel haciéndole creer que hay un proyecto de Node que construir.
 server.js
 ABRIR-SISTEMA.bat
+ABRIR-CON-LECTOR.bat
+puente/
 .claude/
 docs/
 pruebas/

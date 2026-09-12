@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — Capa de persistencia (AG.DB)
+   GORILAS GYM — Capa de persistencia (AG.DB)
    Único archivo, junto con auth.js, autorizado a tocar localStorage.
    Guarda TODO el sistema bajo la llave 'alliance_gym_db_v1'.
 
@@ -72,6 +72,7 @@ window.AG = window.AG || {};
   var almacenOk = true;             // ¿la última escritura funcionó?
   var versionCargada = VERSION;     // versión que traía la base al cargarla
   var migracionPendiente = false;   // una base anterior a la v2 espera sus colecciones nuevas
+  var marcaMigrada = false;         // la base traía la marca anterior y se tradujo al cargarla
 
   /* =============================================================
      Utilidades internas (con respaldo propio por si AG.Utils falta)
@@ -263,7 +264,7 @@ window.AG = window.AG || {};
       avisoCorrupto = true;
       if (window.console && typeof window.console.warn === 'function') {
         window.console.warn(
-          'Alliance Gym: la base guardada estaba dañada. Se respaldó en "' +
+          'Gorilas Gym: la base guardada estaba dañada. Se respaldó en "' +
           LLAVE_CORRUPTO + '" y se arrancó con datos limpios.'
         );
       }
@@ -317,14 +318,14 @@ window.AG = window.AG || {};
   /** Settings por defecto del gimnasio. */
   function settingsPorDefecto() {
     return {
-      nombreGym: 'ALLIANCE GYM',
-      lema: 'Más fuertes juntos',
+      nombreGym: 'GORILAS GYM',
+      lema: 'Fitness Club',
       moneda: 'MXN',
       simbolo: '$',
       locale: 'es-MX',
       direccion: 'Av. Vallarta 1250, Col. Americana, Guadalajara, Jal.',
       telefono: '33 1234 5678',
-      email: 'contacto@alliancegym.mx',
+      email: 'contacto@gorilasgym.mx',
       horario: 'Lun a Vie 5:00–23:00 · Sáb 7:00–17:00 · Dom 8:00–14:00',
       tema: 'oscuro',
       diasGraciaPago: 5,
@@ -332,6 +333,51 @@ window.AG = window.AG || {};
       metaIngresoMensual: 120000,
       costoFijoMensual: 45000
     };
+  }
+
+  /* -------------------------------------------------------------
+     Rebranding: de ALLIANCE GYM a GORILAS GYM FITNESS CLUB.
+     Las bases guardadas antes del cambio siguen en la misma llave de
+     localStorage (nadie pierde datos), así que al cargarlas se traduce
+     la marca vieja. Solo se toca lo que todavía tiene el valor original:
+     si el gimnasio ya personalizó su nombre, lema o correos, se respeta.
+     ------------------------------------------------------------- */
+  var MARCA_ANTERIOR = {
+    nombreGym: 'ALLIANCE GYM',
+    lema: 'Más fuertes juntos',
+    email: 'contacto@alliancegym.mx'
+  };
+  var DOMINIO_ANTERIOR = /@alliancegym\.mx$/i;
+  var DOMINIO_ACTUAL = '@gorilasgym.mx';
+
+  /** Traduce la marca heredada en settings y en los correos sembrados. */
+  function migrarMarcaHeredada() {
+    var cambios = 0;
+
+    var s = DB.state.settings;
+    if (esObjeto(s)) {
+      var base = settingsPorDefecto();
+      for (var clave in MARCA_ANTERIOR) {
+        if (!Object.prototype.hasOwnProperty.call(MARCA_ANTERIOR, clave)) continue;
+        if (String(s[clave] || '').trim() === MARCA_ANTERIOR[clave]) { s[clave] = base[clave]; cambios++; }
+      }
+    }
+
+    /* Correos de las cuentas de ejemplo. Los correos reales que capturó el
+       gimnasio usan otro dominio y no entran aquí. */
+    var usuarios = DB.state.usuarios;
+    if (Array.isArray(usuarios)) {
+      for (var i = 0; i < usuarios.length; i++) {
+        var u = usuarios[i];
+        if (!esObjeto(u) || !u.email) continue;
+        if (DOMINIO_ANTERIOR.test(String(u.email))) {
+          u.email = String(u.email).replace(DOMINIO_ANTERIOR, DOMINIO_ACTUAL);
+          cambios++;
+        }
+      }
+    }
+
+    return cambios > 0;
   }
 
   /**
@@ -503,6 +549,9 @@ window.AG = window.AG || {};
     /* La versión guardada se toma antes de normalizar (normalizar la sube a la actual). */
     versionCargada = esObjeto(datos.meta) ? Math.max(1, entero(datos.meta.version, 1)) : 1;
     reemplazarEstado(fusionarEstado(datos));
+
+    /* Bases guardadas con la marca anterior: se traducen a GORILAS GYM. */
+    marcaMigrada = migrarMarcaHeredada();
 
     /* Base anterior al rediseño: sus colecciones nuevas se completan en
        sembrarSiVacio() (cuando ya está cargado AG.Seed) o a mano con completarDatosV2(). */
@@ -1172,7 +1221,7 @@ window.AG = window.AG || {};
       }
 
       if (!esObjeto(datos)) {
-        avisar('El archivo no es un respaldo de Alliance Gym.', 'error');
+        avisar('El archivo no es un respaldo de Gorilas Gym.', 'error');
         return false;
       }
       if (!esObjeto(datos.meta) || !esArreglo(datos.usuarios) || !datos.usuarios.length) {
@@ -1184,6 +1233,8 @@ window.AG = window.AG || {};
       try {
         var versionRespaldo = Math.max(1, entero(datos.meta.version, 1));
         reemplazarEstado(fusionarEstado(datos));
+        /* Un respaldo hecho antes del rebranding llega con la marca anterior. */
+        migrarMarcaHeredada();
         DB.guardar();
         /* Un respaldo anterior al rediseño recibe sus colecciones nuevas. */
         if (versionRespaldo < 2) DB.completarDatosV2();
@@ -1311,6 +1362,11 @@ window.AG = window.AG || {};
       if (migracionPendiente) {
         try { DB.completarDatosV2(); } catch (e) { migracionPendiente = false; }
       }
+      /* El rebranding se aplicó en memoria al cargar: aquí se deja en disco. */
+      if (marcaMigrada) {
+        marcaMigrada = false;
+        DB.guardar();
+      }
       return false;
     }
 
@@ -1323,6 +1379,7 @@ window.AG = window.AG || {};
 
     reemplazarEstado(fusionarEstado(sembrado));
     migracionPendiente = false;
+    marcaMigrada = false;
     DB.guardar();
     return true;
   };

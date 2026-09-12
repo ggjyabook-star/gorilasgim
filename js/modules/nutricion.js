@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Mod.Nutricion
+   GORILAS GYM — AG.Mod.Nutricion
    -------------------------------------------------------------
    Planes alimenticios del gimnasio. Dos pestañas:
      · Planes    — quién tiene plan activo y quién no (el coach

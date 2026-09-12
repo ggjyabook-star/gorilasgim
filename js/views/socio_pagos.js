@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Views.SocioPagos
+   GORILAS GYM — AG.Views.SocioPagos
    -------------------------------------------------------------
    Pantalla "Mi membresía" del socio. Aquí el socio ve:
      · Su credencial digital con el código de acceso dibujado en SVG.
@@ -289,7 +289,7 @@ window.AG = window.AG || {};
   /* Semilla entera y estable a partir del texto (FNV-1a de 32 bits). */
   function hashTexto(texto) {
     var t = String(texto === null || texto === undefined ? '' : texto);
-    if (!t) t = 'ALLIANCE';
+    if (!t) t = 'GORILAS';
     var h = 2166136261;
     for (var i = 0; i < t.length; i++) {
       h = (h ^ t.charCodeAt(i)) | 0;
@@ -341,7 +341,7 @@ window.AG = window.AG || {};
     var n = LADO_CODIGO;
     var m = MARGEN_CODIGO;
     var lado = n + m * 2;
-    var texto = String(codigo || 'ALLIANCE GYM');
+    var texto = String(codigo || 'GORILAS GYM');
     var semilla = hashTexto(texto);
     var celdas = '';
     var fila, columna, i;
@@ -571,7 +571,7 @@ window.AG = window.AG || {};
           '<div class="mem-cred-marca">' +
             '<span class="mem-cred-escudo">' + icono('escudo', 20) + '</span>' +
             '<div>' +
-              '<b>' + esc(s.nombreGym || 'Alliance Gym') + '</b>' +
+              '<b>' + esc(s.nombreGym || 'Gorilas Gym') + '</b>' +
               '<span>' + esc(s.lema || 'Credencial de socio') + '</span>' +
             '</div>' +
           '</div>' +
@@ -605,7 +605,7 @@ window.AG = window.AG || {};
       ancho: 'lg',
       cuerpo: '<div class="stack">' +
         credencialHTML(socio, { grande: true }) +
-        '<p class="mini muted txt-centro">Este código identifica tu cuenta dentro de Alliance Gym. ' +
+        '<p class="mini muted txt-centro">Este código identifica tu cuenta dentro de Gorilas Gym. ' +
           'No es un código escaneable: en recepción lo comparan con tu nombre y tu código de socio.</p>' +
       '</div>',
       acciones: [{ texto: 'Cerrar', clase: 'btn-ghost' }]

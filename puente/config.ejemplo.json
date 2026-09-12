@@ -1,0 +1,12 @@
+{
+  "puertoSitio": 5173,
+  "puertoReceptor": 80,
+  "lector": {
+    "ip": "",
+    "puerto": 80,
+    "usuario": "admin",
+    "contrasena": ""
+  },
+  "conservarEventosCrudos": 500,
+  "smartpssRuta": ""
+}

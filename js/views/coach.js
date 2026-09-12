@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Views.Coach (rediseño v2)
+   GORILAS GYM — AG.Views.Coach (rediseño v2)
    -------------------------------------------------------------
    Centro de trabajo del entrenador, con la regla del dueño:
    menos texto, una sola acción principal y el detalle escondido

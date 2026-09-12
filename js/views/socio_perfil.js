@@ -1,5 +1,5 @@
 /* =============================================================
-   ALLIANCE GYM — AG.Views.SocioPerfil
+   GORILAS GYM — AG.Views.SocioPerfil
    -------------------------------------------------------------
    "Mi perfil": la pantalla donde el socio manda sobre su propia
    información. Encabezado con avatar y color, sus datos, su
@@ -1080,7 +1080,7 @@ window.AG = window.AG || {};
   }
 
   /* =============================================================
-     12. Pestaña "Mi resumen en Alliance Gym"
+     12. Pestaña "Mi resumen en Gorilas Gym"
      ============================================================= */
 
   /* Recorre los meses con medición inicial y final y se queda con
@@ -1266,7 +1266,7 @@ window.AG = window.AG || {};
 
     var paquete = {
       generado: U.ahora(),
-      gimnasio: settings.nombreGym || 'Alliance Gym',
+      gimnasio: settings.nombreGym || 'Gorilas Gym',
       aviso: 'Copia de tu información personal. No incluye contraseñas ni datos de otros socios.',
       perfil: copiaSinPassword(socio),
       plan: plan ? { id: plan.id, nombre: plan.nombre, precio: plan.precio, meses: plan.meses } : null,
